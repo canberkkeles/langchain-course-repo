@@ -72,7 +72,7 @@ awsauth = AWS4Auth(credentials.access_key, credentials.secret_key,
 
 content_handler = ContentHandler()
 embeddings = SagemakerEndpointEmbeddings(
-    endpoint_name="tei-2025-10-15-15-03-36-339",
+    endpoint_name=os.environ["SM_ENDPOINT_NAME"],
     region_name="us-east-1",
     content_handler=content_handler,
 )
